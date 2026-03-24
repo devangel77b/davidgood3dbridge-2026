@@ -1,0 +1,142 @@
+\documentclass[pdf]{beamer}
+
+\usepackage[orientation=poster,size=custom,width=91.44,height=60.96,scale=1.2,debug]{beamerposter}
+
+\mode<presentation>{
+\usetheme{Englishtown}
+}
+
+%\usepackage[utf8]{inputenc}
+%\usepackage[urw-garamond]{mathdesign}
+%\usepackage[T1]{fontenc}
+%\usepackage{ebgaramond}
+\usepackage{booktabs}
+\usepackage{fancyref}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{siunitx}
+\sisetup{separate-uncertainty=true}
+\usepackage{listings}
+\usepackage{hyperref} % covered with beamer?
+\hypersetup{
+colorlinks=true,
+urlcolor=blue
+}
+\usepackage[export]{adjustbox}
+\usepackage{svg}
+\usepackage{amsmath,amsthm,amssymb}
+%\boldmath
+% Uncomment next line to restore figure numbers if you like that sort of thing
+\setbeamertemplate{caption}[numbered]
+
+% if using ieee style citations
+%\usepackage{cite}
+% or uncomment next line for biology style references
+\usepackage[round,authoryear]{natbib}
+
+\title{K-Truss Design Inspired by the Ikitsuki Bridge}
+\author{Avvin Budhiraja, Michael Christie, Brandon Ma, Vedant Umesh, Gio Uyar}
+\institute{Science \& Engineering Magnet Program, Manalapan High School, Englishtown, NJ 07726}
+\date{\today}
+
+\begin{document}
+\begin{frame}{}
+\begin{columns}[T,totalwidth=\textwidth]
+\begin{column}{12in}
+\begin{minipage}[t][\textheight]{\linewidth}
+\begin{abstract}
+This project explores the effectiveness of K-truss bridge design, inspired by the structural efficiency of the Ikitsuki Bridge and the connectors of a Nintendo Switch. K-trusses are known for their ability to distribute loads effectively, which made them a favorable option. We also used a slide lock to enable sections to be printable within bed size requirements while also allowing quick assembly. We developed our design using CAD and performed an initial analysis for static loads using finite element methods in Onshape.
+\end{abstract}
+\vfill
+\begin{block}{Inspired by Ikitsuki Bridge, Nagasaki Prefecture, Japan.}
+\begin{itemize}
+\item Longest continuous truss bridge
+\item K-trusses are an efficient way to carry loads 
+\end{itemize}
+\begin{center}
+\includegraphics[width=\columnwidth]{figures/itsuki-bridge.png}\\
+\includegraphics[width=0.33\columnwidth]{figures/nintendo-switch.jpg}
+\includegraphics[width=0.32\columnwidth]{figures/bridge-center.png}
+\includegraphics[width=0.33\columnwidth]{figures/itsuki-photo.png}
+\end{center}
+\end{block}
+\vfill
+\begin{block}{Section interconnection using a slide lock}
+\begin{itemize}
+\item Inspired by Nintendo Switch controllers
+\item Enables rapid assembly on-site (Accelerated Bridge Construction)
+\end{itemize}
+\end{block}
+\end{minipage}
+\end{column}
+
+\begin{column}{12in}
+\begin{minipage}[t][\textheight]{\linewidth}
+\begin{block}{Design summary}
+\begin{center}
+\includegraphics[width=\columnwidth]{figures/elevation-rwb.png}
+\end{center}
+\begin{itemize}
+\item K-truss design, efficient use of material
+\item Three sections w slide lock joints
+\item Meets material, weight \& size constraints
+\item Aesthetically pleasing
+\item Manufacturable using a low-cost home 3D printer
+\end{itemize}
+\begin{center}
+\includesvg[width=0.95\columnwidth]{figures/assembly1drawing.svg}
+\end{center}
+\hfill\includegraphics[height=2in]{figures/se-logo-square.png}
+\end{block}
+\end{minipage}
+\end{column}
+
+\begin{column}{12in}
+\begin{minipage}[t][\textheight]{\linewidth}
+\begin{block}{Overall results}
+\begin{center}
+\includegraphics[width=0.48\columnwidth]{figures/vonmises.png}
+\includegraphics[width=0.48\columnwidth]{figures/safetyfactor.png}
+\end{center}
+\begin{itemize}
+\item \qty{900}{\gram} total weight, meets requirement
+\item Estimated assembly time 1 minute, build time 2-5 days 
+\item Predicted load at failure \qty{100}{\kilo\gram} / \qty{1000}{\newton}, based on safety factor of 2 and PLA $\rho$, $E$, $\sigma_y$, $\sigma_{U}$ adjusted for 20\% infill
+\item Predicted failure mode yield or fracture in way of load pin or mid section corners; or buckling at upper mid section in way of circular feature
+\end{itemize}
+\end{block}
+\vfill
+\begin{block}{Details}
+\begin{itemize}
+\item Challenges faced
+\begin{itemize}
+\item Clearing issues found during initial drawing review
+\item Potential shrinkage in way of slide locks
+\item Issues generating support material in Cura
+\item Learning curve for CAD and FEM in Onshape
+\end{itemize}
+\item Print details
+\begin{itemize}
+\item Sliced using Cura, printed on Elegoo Neptune 3 Max
+\item \qty{0.16}{\milli\meter} resolution, 20\% infill, grid infill pattern, tree supports
+\item \qty{205}{\celsius} extruder, \qty{60}{\celsius} bed
+\end{itemize}
+\end{itemize}
+\end{block}
+\vfill
+\begin{block}{Future work}
+\begin{itemize}
+\item Improve weight efficiency, reinforcements, round corners
+\item Extra prints \& test specimens for testing \& validation
+\end{itemize}
+\end{block}
+\vfill
+\begin{block}{} %Acknowledgements}
+We thank E.~Levin, J.~Philhower, J.~Powers, J.~Komitas, Prof Hickey and Ms.~Botei, Dr.~Evangelista. Support from Manalapan High School Science \& Engineering. Contact author: \href{mailto:428bma@frhsd.com}{\texttt{428bma@frhsd.com}}
+\end{block}
+\vfill*
+\end{minipage}
+\end{column}
+\end{columns}
+\end{frame}
+\end{document}

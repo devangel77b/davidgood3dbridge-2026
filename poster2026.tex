@@ -1,0 +1,142 @@
+\documentclass[pdf]{beamer}
+
+\usepackage[orientation=poster,size=custom,width=91.44,height=60.96,scale=1.2,debug]{beamerposter}
+
+\mode<presentation>{
+\usetheme{Englishtown}
+}
+
+%\usepackage[utf8]{inputenc}
+%\usepackage[urw-garamond]{mathdesign}
+%\usepackage[T1]{fontenc}
+%\usepackage{ebgaramond}
+\usepackage{booktabs}
+\usepackage{fancyref}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{siunitx}
+\sisetup{separate-uncertainty=true}
+\usepackage{listings}
+\usepackage{hyperref} % covered with beamer?
+\hypersetup{
+colorlinks=true,
+urlcolor=blue
+}
+\usepackage[export]{adjustbox}
+\usepackage{svg}
+\usepackage{amsmath,amsthm,amssymb}
+%\boldmath
+% Uncomment next line to restore figure numbers if you like that sort of thing
+\setbeamertemplate{caption}[numbered]
+
+% if using ieee style citations
+%\usepackage{cite}
+% or uncomment next line for biology style references
+\usepackage[round,authoryear]{natbib}
+
+\title{Warren Truss design inspired by Rhinecliff Bridge}
+\author{Avvin Budhiraja, Michael Christie, Brandon Ma, Vedant Umesh, Matt Henkel}
+\institute{Science \& Engineering Magnet Program, Manalapan High School, Englishtown, NJ 07726}
+\date{\today}
+
+\begin{document}
+\begin{frame}{}
+\begin{columns}[T,totalwidth=\textwidth]
+\begin{column}{12in}
+\begin{minipage}[t][\textheight]{\linewidth}
+\begin{abstract}
+This project explores the effectiveness of Warren truss bridge design, inspired by the structural efficiency of the Kingston-Rhinecliff Bridge and our Nintendo Switch-inspired connectors. Warren trusses are known for their ability to distribute loads effectively through triangulated diagonals, making them a highly favorable option. We used a slide-lock and keyhole joint system to enable sections to be with the required dimensions while allowing for quick assembly. We developed our design using CAD and performed an initial analysis for static loads using finite element methods in Onshape. 
+\end{abstract}
+\vfill
+\begin{block}{Inspired by Kingston-Rhinecliff Bridge, New York.}
+\begin{itemize}
+\item One of the longest Warren truss bridges in the US
+\item Warren trusses efficiently carry loads through triangulated diagnoals with no redundance verticals
+\end{itemize}
+\begin{center}
+images here
+\end{center}
+\end{block}
+\vfill
+\begin{block}{Section interconnections via slide-lock and keyhole}
+\begin{itemize}
+\item Slide-lock inspired by Nintendo Switch controllers
+\item Keyhole bracket hanger 
+\item Dual joint system enables rapid assembly on-site (Accelerated Bridge Construction)
+\end{itemize}
+\end{block}
+\end{minipage}
+\end{column}
+
+\begin{column}{12in}
+\begin{minipage}[t][\textheight]{\linewidth}
+\begin{block}{Design summary}
+\begin{center}
+%\includegraphics[width=\columnwidth]{figures/elevation-rwb.png}
+bridge image here
+\end{center}
+\begin{itemize}
+\item Warren truss design, efficient distribution of loads
+\item Ten individual sections w slide-lock and keyhole joints
+\item Meets material, weight \& size constraints
+\end{itemize}
+\begin{center}
+%\includesvg[width=0.95\columnwidth]{figures/assembly1drawing.svg}
+3 view drawing here
+
+finite element drawing here
+\end{center}
+\hfill\includegraphics[height=2in]{figures/se-logo-square.png}
+\end{block}
+\end{minipage}
+\end{column}
+
+\begin{column}{12in}
+\begin{minipage}[t][\textheight]{\linewidth}
+\begin{block}{Overall results}
+\begin{center}
+finite element here
+\end{center}
+\begin{itemize}
+\item \qty{612}{\gram} total weight, meets requirement
+\item Estimated assembly time \qty{35}{\second}, build time 2-5 days 
+\item Predicted load at failure \qty{106}{\kilo\gram} / \qty{1039}{\newton}, based on safety factor of 2 and PLA $\rho$, $E$, $\sigma_y$, $\sigma_{U}$ adjusted for 15\% infill
+\item Predicted failure mode yield or fracture in way of load pin in areas of stress concentration
+\end{itemize}
+\end{block}
+\vfill
+\begin{block}{Details}
+\begin{itemize}
+\item Challenges faced
+\begin{itemize}
+\item Interference from residual support material in slide-locks
+\item Minimizing material usage
+\item Print warping and bed adhesion issues w large parts
+\item Interoperability of prints from different printers
+\end{itemize}
+\item Print details
+\begin{itemize}
+\item Sliced using Cura and Creality Print, printed on Elegoo Neptune 3 Max and Creality K1 Max
+\item \qty{0.12}{\milli\meter} resolution, gyroid infil, normal supports
+\item \qty{205}{\celsius} extruder, \qty{60}{\celsius} bed
+\item 10\% infill in top piece; 12\% infill in the base, 15\% infill in sides, with sections reinforced with 20\% infill
+\end{itemize}
+\end{itemize}
+\end{block}
+\vfill
+\begin{block}{Future work}
+\begin{itemize}
+\item Snap-fit tolerancing calibration across multi-printer builds
+\item FEA0guided variable infill zoning
+\end{itemize}
+\end{block}
+\vfill
+\begin{block}{} %Acknowledgements}
+We thank N.~Parkhomovsky, L.~Pladl, F.~Blair, E.~Levin, J.~Philhower, J.~Powers, E.~Kaplan, J.~Komitas, Prof Hickey and Ms.~Botei, Dr.~Evangelista. Support from Manalapan High School Science \& Engineering. Contact author: \href{mailto:428bma@frhsd.com}{\texttt{428bma@frhsd.com}}
+\end{block}
+\vfill*
+\end{minipage}
+\end{column}
+\end{columns}
+\end{frame}
+\end{document}

@@ -34,8 +34,8 @@ urlcolor=blue
 % or uncomment next line for biology style references
 \usepackage[round,authoryear]{natbib}
 
-\title{Warren Truss design inspired by Rhinecliff Bridge}
-\author{Avvin Budhiraja, Michael Christie, Brandon Ma, Vedant Umesh, Matt Henkel}
+\title{Warren truss design inspired by Rhinecliff Bridge}
+\author{Avvin Budhiraja, Michael Christie, Brandon Ma, Vedant Umesh, Matthew Henkel}
 \institute{Science \& Engineering Magnet Program, Manalapan High School, Englishtown, NJ 07726}
 \date{\today}
 
@@ -45,26 +45,29 @@ urlcolor=blue
 \begin{column}{12in}
 \begin{minipage}[t][\textheight]{\linewidth}
 \begin{abstract}
-This project explores the effectiveness of Warren truss bridge design, inspired by the structural efficiency of the Kingston-Rhinecliff Bridge and our Nintendo Switch-inspired connectors. Warren trusses are known for their ability to distribute loads effectively through triangulated diagonals, making them a highly favorable option. We used a slide-lock and keyhole joint system to enable sections to be with the required dimensions while allowing for quick assembly. We developed our design using CAD and performed an initial analysis for static loads using finite element methods in Onshape. 
+This project explores the effectiveness of Warren truss bridge design, inspired by the structural efficiency of the Kingston-Rhinecliff Bridge and our Nintendo Switch-inspired connectors. Warren trusses are known for their ability to distribute loads effectively through triangulated diagonals, making them a highly favorable option. We used a slide-lock and keyhole joint system to enable sections to be within the required dimensions while allowing for quick assembly. We developed our design and performed an initial analysis for static loads using finite element methods in Onshape. 
 \end{abstract}
 \vfill
-\begin{block}{Inspired by Kingston-Rhinecliff Bridge, New York.}
+\begin{block}{Kingston-Rhinecliff Bridge, NY}
 \begin{itemize}
 \item One of the longest Warren truss bridges in the US
-\item Warren trusses efficiently carry loads through triangulated diagnoals with no redundance verticals
+\item Triangulated diagonals efficiently carry loads
 \end{itemize}
 \begin{center}
-images here
+\includegraphics[width=0.25\columnwidth]{figures/nintendo-switch.jpg}
+\includegraphics[width=0.2\columnwidth]{figures/image (1).png}
+\includegraphics[width=0.33\columnwidth]{figures/image (2).png}
 \end{center}
 \end{block}
 \vfill
-\begin{block}{Section interconnections via slide-lock and keyhole}
+\begin{block}{Dual joint system for fast assembly}
 \begin{itemize}
 \item Slide-lock inspired by Nintendo Switch controllers
-\item Keyhole bracket hanger 
-\item Dual joint system enables rapid assembly on-site (Accelerated Bridge Construction)
+\item Keyhole bracket hanger joints for road deck
+\item Accelerated Bridge Construction
 \end{itemize}
 \end{block}
+\vfill*
 \end{minipage}
 \end{column}
 
@@ -72,8 +75,7 @@ images here
 \begin{minipage}[t][\textheight]{\linewidth}
 \begin{block}{Design summary}
 \begin{center}
-%\includegraphics[width=\columnwidth]{figures/elevation-rwb.png}
-bridge image here
+\includegraphics[width=\columnwidth]{figures/0839aaad-bc92-40a0-95c8-3c79638200a4.png}
 \end{center}
 \begin{itemize}
 \item Warren truss design, efficient distribution of loads
@@ -81,11 +83,9 @@ bridge image here
 \item Meets material, weight \& size constraints
 \end{itemize}
 \begin{center}
-%\includesvg[width=0.95\columnwidth]{figures/assembly1drawing.svg}
-3 view drawing here
-
-finite element drawing here
+\includegraphics[width=0.95\columnwidth]{figures/Drawing 3.pdf}\\
 \end{center}
+\includegraphics[height=2in]{figures/a5351829-88ad-4255-afe3-3a1f8b4f4e46.png}
 \hfill\includegraphics[height=2in]{figures/se-logo-square.png}
 \end{block}
 \end{minipage}
@@ -95,13 +95,13 @@ finite element drawing here
 \begin{minipage}[t][\textheight]{\linewidth}
 \begin{block}{Overall results}
 \begin{center}
-finite element here
+\includegraphics[width=0.95\columnwidth]{figures/2cc41381-290d-4d9b-b612-cd0788bd1a66.png}
 \end{center}
 \begin{itemize}
-\item \qty{612}{\gram} total weight, meets requirement
-\item Estimated assembly time \qty{35}{\second}, build time 2-5 days 
-\item Predicted load at failure \qty{106}{\kilo\gram} / \qty{1039}{\newton}, based on safety factor of 2 and PLA $\rho$, $E$, $\sigma_y$, $\sigma_{U}$ adjusted for 15\% infill
-\item Predicted failure mode yield or fracture in way of load pin in areas of stress concentration
+\item \qty{598}{\gram} total weight, assembly time \qty{45}{\second}, build time 2-5 days 
+\item Predicted load at failure \qty{106}{\kilo\gram} / \qty{1039}{\newton}
+%, based on safety factor of 2 and PLA $\rho$, $E$, $\sigma_y$, $\sigma_{U}$ adjusted for 15\% infill
+\item Fracture near load pin areas of stress concentration
 \end{itemize}
 \end{block}
 \vfill
@@ -110,29 +110,28 @@ finite element here
 \item Challenges faced
 \begin{itemize}
 \item Interference from residual support material in slide-locks
-\item Minimizing material usage
-\item Print warping and bed adhesion issues w large parts
+\item Minimizing material usage, improve load/weight from 2025
+\item Print warping and bed adhesion issues with large parts
 \item Interoperability of prints from different printers
 \end{itemize}
 \item Print details
 \begin{itemize}
-\item Sliced using Cura and Creality Print, printed on Elegoo Neptune 3 Max and Creality K1 Max
+\item Sliced using Cura and Creality Print
+\item Printed on Elegoo Neptune 3 Max and Creality K1 Max
 \item \qty{0.12}{\milli\meter} resolution, gyroid infil, normal supports
 \item \qty{205}{\celsius} extruder, \qty{60}{\celsius} bed
 \item 10\% infill in top piece; 12\% infill in the base, 15\% infill in sides, with sections reinforced with 20\% infill
 \end{itemize}
-\end{itemize}
-\end{block}
-\vfill
-\begin{block}{Future work}
+\item Future work
 \begin{itemize}
 \item Snap-fit tolerancing calibration across multi-printer builds
-\item FEA0guided variable infill zoning
+\item FEA-guided variable infill zoning, reduce weight further
+\end{itemize}
 \end{itemize}
 \end{block}
 \vfill
 \begin{block}{} %Acknowledgements}
-We thank N.~Parkhomovsky, L.~Pladl, F.~Blair, E.~Levin, J.~Philhower, J.~Powers, E.~Kaplan, J.~Komitas, Prof Hickey and Ms.~Botei, Dr.~Evangelista. Support from Manalapan High School Science \& Engineering. Contact author: \href{mailto:428bma@frhsd.com}{\texttt{428bma@frhsd.com}}
+We thank N~Parkhomovsky, L~Pladl, F~Blair, J~Komitas, Prof Hickey and Ms~Botei, Dr~Evangelista, Manalapan High School Science \& Engineering. Contact author: \href{mailto:428bma@frhsd.com}{\texttt{428bma@frhsd.com}}
 \end{block}
 \vfill*
 \end{minipage}
